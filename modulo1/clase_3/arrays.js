@@ -1,0 +1,19 @@
+//1. Crear un Array: Crea un array llamado colores con al menos cuatro colores diferentes.
+let colores = ["rojo", "verde", "azul", "amarillo"];
+console.log("Array de colores:", colores);
+
+//2. Imprimir el Segundo Color: Imprime el segundo color del array.
+console.log("El segundo color es:", colores[1]);
+
+//3. Modificar el Tercer Color: Cambia el tercer color a otro color de tu elección.
+colores[2] = "naranja";
+console.log("Array de colores después de modificar el tercer color:", colores);
+
+//4. Añadir un Nuevo Color: Añade un nuevo color al final del array.
+colores.push("morado");
+console.log("Array de colores después de añadir un nuevo color:", colores);
+
+//5. Eliminar el Primer Color: Elimina el primer color del array y muestra el resultado.
+colores.shift();
+console.log("Array de colores después de eliminar el primer color:", colores);
+
