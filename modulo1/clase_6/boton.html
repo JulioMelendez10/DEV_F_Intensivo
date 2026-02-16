@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1: Cambiar contenido con un boton JavaScript</title>
+</head>
+<body>
+
+    <h1 id="titulo">Dialogo de prueba.</h1>
+    <p id="parrafo">Este es un párrafo de prueba.</p>
+    <button id="cambiartitulo">Cambiar contenido</button>
+
+    <script>
+        const boton = document.getElementById("cambiartitulo");
+        const titulo = document.getElementById("titulo");
+        const parrafo = document.getElementById("parrafo");
+
+        boton.addEventListener("click", function() {
+            titulo.textContent = "¡Has cambiado el título!";
+            parrafo.textContent = "¡Has cambiado el párrafo!";
+        });
+    </script>
+    
+</body>
+</html>

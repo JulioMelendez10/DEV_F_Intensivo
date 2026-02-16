@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostar y Ocultar contenido JavaScript</title>
+</head>
+<body>
+    
+    <p id="contenido" style="display: none;">Contenido Random </p>
+    <button id="botonMostrarOcultar">Mostrar</button>
+
+    <script>
+        const botonMostarOcultar = document.getElementById("botonMostrarOcultar");
+        const contenido = document.getElementById("contenido");
+
+        botonMostarOcultar.addEventListener("click", function() {
+            if (contenido.style.display === "none") {
+                contenido.style.display = "block";
+                botonMostarOcultar.textContent = "Ocultar";
+            } else {
+                contenido.style.display = "none";
+                botonMostarOcultar.textContent = "Mostrar";
+            }
+        });
+    </script>
+</body>
+</html>

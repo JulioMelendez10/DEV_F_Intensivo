@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Caja de Comentarios</title>
+</head>
+<body>
+
+    <!-- Título principal -->
+    <h1>Caja de Comentarios</h1>
+
+    <!-- ===== FORMULARIO ===== -->
+    <form id="formComentario">
+        
+        <!-- Campo de texto donde el usuario escribe -->
+        <textarea id="textoComentario" placeholder="Escribe tu comentario aquí..." required></textarea>
+        
+        <br><br>
+        
+        <!-- Botón para agregar comentario -->
+        <button type="submit">Agregar Comentario</button>
+    
+    </form>
+
+    <hr>
+
+    <!-- ===== CONTENEDOR DONDE APARECERÁN LOS COMENTARIOS ===== -->
+    <div id="listaComentarios"></div>
+
+
+    <script>
+        // 1️⃣ OBTENER ELEMENTOS DEL DOM
+  
+        // Referencia al formulario
+        const formulario = document.getElementById("formComentario");
+
+        // Referencia al textarea
+        const textarea = document.getElementById("textoComentario");
+
+        // Referencia al contenedor de comentarios
+        const lista = document.getElementById("listaComentarios");
+
+
+        // 2️⃣ ESCUCHAR EL EVENTO SUBMIT DEL FORMULARIO
+
+        formulario.addEventListener("submit", function(evento) {
+
+            // Evita que la página se recargue
+            evento.preventDefault();
+
+            // Obtener el texto escrito por el usuario
+            const texto = textarea.value.trim();
+
+            // Verificar que no esté vacío
+            if (texto === "") {
+                alert("El comentario no puede estar vacío");
+                return;
+            }
+
+            // 3️⃣ CREAR ELEMENTOS DINÁMICAMENTE
+
+            // Crear contenedor individual del comentario
+            const comentarioDiv = document.createElement("div");
+
+            // Crear párrafo para el texto del comentario
+            const nuevoComentario = document.createElement("p");
+            nuevoComentario.textContent = texto;
+
+            // Crear elemento para fecha y hora
+            const fecha = document.createElement("small");
+
+            // Obtener fecha actual
+            const fechaActual = new Date();
+
+            // Convertir fecha a formato local
+            fecha.textContent = "Publicado el: " + fechaActual.toLocaleString();
+
+            // 4️⃣ CREAR BOTÓN PARA ELIMINAR COMENTARIO
+
+            const botonEliminar = document.createElement("button");
+            botonEliminar.textContent = "Eliminar";
+
+            // Evento para eliminar el comentario
+            botonEliminar.addEventListener("click", function() {
+                lista.removeChild(comentarioDiv);
+            });
+
+            // 5️⃣ AGREGAR ELEMENTOS AL CONTENEDOR
+
+            comentarioDiv.appendChild(nuevoComentario);
+            comentarioDiv.appendChild(fecha);
+            comentarioDiv.appendChild(document.createElement("br"));
+            comentarioDiv.appendChild(botonEliminar);
+
+            // Agregar el comentario a la lista
+            lista.appendChild(comentarioDiv);
+
+            // Limpiar el textarea
+            textarea.value = "";
+
+        });
+
+    </script>
+
+</body>
+</html>
