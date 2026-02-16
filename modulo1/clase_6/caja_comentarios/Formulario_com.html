@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario y Comentario</title>
+</head>
+<body>
+
+    <form id="formComentario">
+        <!-- Formulario con Nombre y Cooreo -->
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="email" id="correo" placeholder="Correo Electrónico" required>
+        <textarea id="textoComentario" placeholder="Escribe tu comentario aquí..." required></textarea>
+        <br><br>
+        <button type="submit">Agregar Comentario</button>   
+    </form>
+
+    <!-- Contenedor donde estara comentario e info -->
+    <div id="listaComentarios"></div>
+    
+</body>
+</html>
