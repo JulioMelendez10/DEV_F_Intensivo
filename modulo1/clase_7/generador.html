@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Generador de Contraseñas</h2>
+
+    <!-- DISPLAY -->
+    <div class="display">
+        <input type="text" id="password" readonly>
+        <button id="copyBtn">📋</button>
+    </div>
+
+    <!-- LENGTH -->
+    <div class="length-container">
+        <label>Character Length</label>
+        <span id="lengthValue">10</span>
+    </div>
+
+    <input type="range" min="4" max="32" value="10" id="lengthSlider">
+
+    <!-- OPTIONS -->
+    <div class="options">
+
+        <label>
+            <input type="checkbox" id="uppercase" checked>
+            Include Uppercase Letters
+        </label>
+
+        <label>
+            <input type="checkbox" id="lowercase" checked>
+            Include Lowercase Letters
+        </label>
+
+        <label>
+            <input type="checkbox" id="numbers" checked>
+            Include Numbers
+        </label>
+
+        <label>
+            <input type="checkbox" id="symbols">
+            Include Symbols
+        </label>
+
+    </div>
+
+    <!-- STRENGTH -->
+    <div class="strength-container">
+        <span>STRENGTH</span>
+        <span id="strengthText">MEDIUM</span>
+
+        <div class="bars">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>
+            <div class="bar" id="bar4"></div>
+        </div>
+    </div>
+
+    <!-- GENERATE -->
+    <button id="generateBtn">GENERATE →</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
