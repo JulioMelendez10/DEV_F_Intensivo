@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tienda Online</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+    <body class="bg-gray-100 p-6">
+
+    <div class="max-w-xl mx-auto bg-white p-6 rounded-2xl shadow">
+        <h1 class="text-xl font-bold mb-4">Tienda Online</h1>
+
+        <div class="flex gap-2 mb-4">
+        <button onclick="filtrar()" class="bg-blue-500 text-white px-3 py-2 rounded-xl">
+            Filtrar < $100
+        </button>
+        <button onclick="ordenar()" class="bg-green-500 text-white px-3 py-2 rounded-xl">
+            Ordenar
+        </button>
+        <button onclick="mostrarNombres()" class="bg-purple-500 text-white px-3 py-2 rounded-xl">
+            Mostrar nombres
+        </button>
+        </div>
+
+        <ul id="lista" class="space-y-2"></ul>
+    </div>
+
+    <script>
+        const productos = [
+        { nombre: "Laptop", precio: 15000, categoria: "Electrónica" },
+        { nombre: "Mouse", precio: 200, categoria: "Electrónica" },
+        { nombre: "Teclado", precio: 80, categoria: "Electrónica" },
+        { nombre: "Libreta", precio: 50, categoria: "Papelería" },
+        { nombre: "Pluma", precio: 20, categoria: "Papelería" },
+        { nombre: "Audífonos", precio: 90, categoria: "Electrónica" }
+        ];
+
+        let resultado = [];
+
+        const render = (arr) => {
+        const lista = document.getElementById("lista");
+        lista.innerHTML = "";
+
+        arr.forEach(item => {
+            const li = document.createElement("li");
+            li.className = "bg-gray-100 p-2 rounded-xl";
+
+            li.textContent = typeof item === "string"
+            ? item
+            : `${item.nombre} - $${item.precio}`;
+
+            lista.appendChild(li);
+        });
+        };
+
+        const filtrar = () => {
+        resultado = productos.filter(p => p.precio < 100);
+        render(resultado);
+        };
+
+        const ordenar = () => {
+        resultado = [...resultado].sort((a, b) =>
+            a.nombre.localeCompare(b.nombre)
+        );
+        render(resultado);
+        };
+
+        const mostrarNombres = () => {
+        const nombres = resultado.map(p => p.nombre);
+        render(nombres);
+        };
+    </script>
+
+    </body>
+</html>
