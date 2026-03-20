@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista de Compras</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-gray-100 flex items-center justify-center h-screen">
+        <div class="bg-white p-6 rounded-2xl shadow-lg w-96">
+            <h1 class="text-xl font-bold mb-4 text-center">Lista de Compras</h1>
+
+            <div class="flex gap-2 mb-4">
+                <input id="productoInput" type="text" placeholder="Agregar producto" 
+                class="flex-1 border rounded-xl px-3 py-2" />
+            <button onclick="agregarProducto()" 
+                class="bg-blue-500 text-white px-3 py-2 rounded-xl">+</button>
+            </div>
+
+            <ul id="lista" class="space-y-2"></ul>
+        </div>
+
+    <script>
+        let listaDeCompras = [];
+
+        const renderizarLista = () => {
+        const lista = document.getElementById("lista");
+        lista.innerHTML = "";
+
+        listaDeCompras.forEach(producto => {
+            const li = document.createElement("li");
+            li.className = "flex justify-between items-center bg-gray-100 px-3 py-2 rounded-xl";
+
+        li.innerHTML = `
+            <span>${producto}</span>
+            <button onclick="eliminarProducto('${producto}')" 
+            class="text-red-500 font-bold">X</button>
+        `;
+
+            lista.appendChild(li);
+        });
+    };
+
+    const agregarProducto = () => {
+        const input = document.getElementById("productoInput");
+        const producto = input.value.trim();
+
+        if (producto === "") return;
+            const productoNormalizado = producto.toLowerCase();
+
+            const existe = listaDeCompras.some(
+            p => p.toLowerCase() === productoNormalizado
+            );
+
+    if (!existe) {
+        listaDeCompras.push(producto);
+    } else {
+        alert("El producto ya existe");
+    }
+
+    input.value = "";
+        renderizarLista();
+    };
+
+    const eliminarProducto = (producto) => {
+        listaDeCompras = listaDeCompras.filter(p => p !== producto);
+        renderizarLista();
+    };
+
+</script>
+</body>
+</html>
