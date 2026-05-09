@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro con Zod</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Formulario de Registro</h2>
+
+    <form id="formulario">
+
+      <!-- Nombre -->
+      <label>Nombre</label>
+      <input type="text" id="nombre">
+      <small class="error" id="error-nombre"></small>
+
+      <!-- Email -->
+      <label>Correo Electrónico</label>
+      <input type="email" id="email">
+      <small class="error" id="error-email"></small>
+
+      <!-- Password -->
+      <label>Contraseña</label>
+      <input type="password" id="password">
+      <small class="error" id="error-password"></small>
+
+      <button type="submit">Registrarse</button>
+
+    </form>
+
+    <p id="exito" class="success"></p>
+  </div>
+
+  <!-- ZOD CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/zod@3.22.4/lib/index.umd.min.js"></script>
+
+  <!-- Tu script -->
+  <script src="app.js"></script>
+
+</body>
+</html>
