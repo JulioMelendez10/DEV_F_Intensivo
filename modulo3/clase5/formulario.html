@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Evento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Formulario de Registro</h2>
+
+    <form id="formulario">
+
+        <!-- Nombre -->
+        <label>Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <!-- Correo -->
+        <label>Correo:</label>
+        <input type="email" id="correo" required>
+
+        <!-- Teléfono -->
+        <label>Teléfono:</label>
+        <input type="tel" id="telefono" required>
+
+        <!-- Intereses -->
+        <label>Intereses:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="intereses" value="tecnologia"> Tecnología</label>
+            <label><input type="checkbox" name="intereses" value="negocios"> Negocios</label>
+            <label><input type="checkbox" name="intereses" value="marketing"> Marketing</label>
+        </div>
+
+        <!-- Horario -->
+        <label>Horario preferido:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="horario" value="mañana"> Mañana</label>
+            <label><input type="radio" name="horario" value="tarde"> Tarde</label>
+            <label><input type="radio" name="horario" value="noche"> Noche</label>
+        </div>
+
+        <!-- Fecha -->
+        <label>Fecha del evento:</label>
+        <input type="date" id="fecha" required>
+
+        <!-- Archivo -->
+        <label>Subir identificación (opcional):</label>
+        <input type="file" id="archivo">
+
+        <button type="submit">Registrarse</button>
+
+        <p id="mensaje"></p>
+
+    </form>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
