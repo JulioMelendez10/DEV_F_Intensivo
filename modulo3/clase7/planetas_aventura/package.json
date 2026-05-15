@@ -1,0 +1,15 @@
+{
+  "name": "planetas-aventura",
+  "version": "1.0.0",
+  "description": "Registro de planetas favoritos",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "planetas": "node planetas.js"
+  },
+  "author": "Julio Federico",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
